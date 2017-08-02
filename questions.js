@@ -17,9 +17,9 @@ exports.preQuestions = () => {
 }
 
 exports.questions = [{
-	question: answers => `project name: ${answers._dest ? `(${sanitizeDest(answers._dest)}) ` : ''} `.cyan,
+	question: answers => `project name: ${answers._dest ? `(${answers._dest.split(' ').join('-')}) ` : ''} `.cyan,
 	answerName: 'projectName',
-	defaultValue: answers => answers._dest,
+	defaultValue: answers => answers._dest.split(' ').join('-'),
 	files: ['package.json']
 },{
 	question: () => 'project version: (1.0.0) '.cyan,
