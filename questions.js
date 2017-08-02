@@ -35,8 +35,8 @@ exports.questions = [{
 	answerName: 'gimpHome',
 	defaultValue: answers => 1,
 	execute: {
-		validate: answer => GIMPHOME[answer],
-		onSuccess: answer => GIMPHOME[answer],
+		validate: answer => GIMPHOME[(answer-1)*1],
+		onSuccess: answer => GIMPHOME[(answer-1)*1],
 		onError: answer => `'${answer}' is not a valid home for your gimp.`
 	},
 	files: ['index.html']
