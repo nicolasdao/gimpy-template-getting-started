@@ -24,7 +24,7 @@ exports.questions = [{
 },{
 	question: () => 'project version: (1.0.0) '.cyan,
 	answerName: 'projectVersion',
-	defaultValue: () => '1.0.0',
+	defaultValue: answers => '1.0.0',
 	files: ['package.json']
 },{
 	question: () => ('Where do you want to send your gimp? \n' + 
@@ -33,7 +33,7 @@ exports.questions = [{
 					'  [3] The Basement \n' +
 					'Choose one of the above: ([1]) ').cyan,
 	answerName: 'gimpHome',
-	defaultValue: () => 1,
+	defaultValue: answers => 1,
 	execute: {
 		validate: answer => GIMPHOME[answer],
 		onSuccess: answer => GIMPHOME[answer],
